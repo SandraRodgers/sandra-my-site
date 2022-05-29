@@ -30,8 +30,7 @@ const description = "About Sandra Rodgers";
 
 <style>
   .container {
-    @apply border-2 border-one;
-    @apply px-10;
+    @apply px-10 sm:px-16 lg:px-24 xl:px-44;
     /* @apply px-10 lg:px-44; */
     @apply py-28 sm:py-32 lg:py-40;
   }
@@ -41,24 +40,25 @@ const description = "About Sandra Rodgers";
 
     div {
       @apply border-2 border-black;
-      @apply w-full xl:w-3/6;
+      @apply w-full xl:w-4/6;
     }
 
     .img-container {
-      @apply flex justify-center xl:justify-end;
+      @apply flex justify-center xl:justify-center;
 
       img {
-        @apply w-3/6 xl:w-full;
+        /* @apply h-3/6; */
+        @apply h-3/6;
         /* @apply h-2/6 lg:h-2/6 xl:h-full; */
-        /* @apply w-4/6; */
+        @apply w-4/6 xl:w-auto;
       }
     }
   }
 
   .text-container {
-    @apply pl-16;
+    @apply pl-8;
     h1 {
-      @apply text-4xl lg:text-5xl xl:text-6xl !important;
+      @apply text-5xl lg:text-6xl !important;
       @apply mt-4 md:mt-8 xl:mt-0;
     }
     p {

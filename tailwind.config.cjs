@@ -12,7 +12,8 @@ module.exports = {
       gray: "#D9D9D9",
       one: "#EFB198",
       two: "#F5E090",
-      three: "#CEF3DB",
+      three: "#9DFFC1",
+      four: "#a3b5e3",
     },
     fontSize: {
       xs: ".75rem",

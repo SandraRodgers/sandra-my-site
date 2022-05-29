@@ -1,10 +1,46 @@
+---
+import { Icon } from "astro-icon";
+---
+
 <div class="social">
-  <div class="hamburger">MENU</div>
+  <div class="home">Home</div>
   <ul>
-    <li>ICON 1</li>
-    <li>ICON 2</li>
-    <li>ICON 3</li>
-    <li>ICON 4</li>
+    <li>
+      <a
+        href="https://github.com/SandraRodgers"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <Icon height="1.85rem" name="simple-icons:github" /></a
+      >
+    </li>
+    <li>
+      <a
+        href="https://codepen.io/sandrarodgers"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <Icon height="1.85rem" name="simple-icons:codepen" /></a
+      >
+    </li>
+    <li>
+      <a
+        href="https://www.linkedin.com/in/sandra-rodgers/"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <Icon height="1.85rem" name="simple-icons:linkedin" /></a
+      >
+    </li>
+    <li>
+      <a
+        href="https://twitter.com/sandra_rodgers_"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <Icon height="1.85rem" name="simple-icons:twitter" /></a
+      >
+    </li>
   </ul>
 </div>
 
@@ -12,18 +48,25 @@
   ul {
     @apply flex justify-between;
     @apply w-4/6 md:w-3/6 lg:w-2/6;
-    @apply mr-6;
-    @apply border-2 border-two;
+    /* @apply mr-6 lg:mr-32; */
+    @apply text-three;
   }
 
   .social {
     @apply flex justify-between md:justify-end;
     @apply py-6;
-    @apply border-2 border-two;
   }
 
-  .hamburger {
+  .home {
     @apply flex md:hidden;
     @apply ml-6;
+    @apply font-cairo font-extrabold;
+    @apply text-xl text-three;
+    @apply cursor-pointer;
+  }
+
+  ul {
+    @apply px-8 xl:px-16;
+    @apply pl-24 md:pl-0;
   }
 </style>

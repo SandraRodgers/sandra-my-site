@@ -15,5 +15,8 @@
     "postcss-import": "^14.1.0",
     "prettier-plugin-astro": "^0.0.12",
     "vue": "^3.2.35"
+  },
+  "dependencies": {
+    "astro-icon": "^0.7.1"
   }
 }

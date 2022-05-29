@@ -1,5 +1,8 @@
 ---
-export async function getStaticPaths({rss}) {
+import Layout from "../../layouts/Default.astro";
+import "../../styles/main.css";
+
+export async function getStaticPaths({ rss }) {
   const allPosts = await Astro.glob("../../content/blog/**/**/*.md");
   const sortedPosts = allPosts.sort(
     (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
@@ -9,22 +12,49 @@ export async function getStaticPaths({rss}) {
   });
 
   return sortedPosts.map((post) => {
-    const pathParts = post.file.replace('/index.md', '').split('/');
-    const slug = pathParts[pathParts.length - 1]
+    const pathParts = post.file.replace("/index.md", "").split("/");
+    const slug = pathParts[pathParts.length - 1];
     return {
       params: {
-        slug
+        slug,
       },
       props: {
-        post
-      }
-    }
-  })
+        post,
+      },
+    };
+  });
 }
 
 const { post } = Astro.props;
-
+console.log(post);
+const pageTitle = "Sandra Rodgers";
+const pageDescription = "Personal blog of Sandra Rodgers";
 ---
-<div>
-<post.Content/>
-</div>
+
+<Layout {pageTitle} {pageDescription}>
+  <div class="post">
+    <h1>{post.frontmatter.title}</h1>
+    <img class="cover" src={post.frontmatter.cover} />
+    <post.Content></post.Content>
+  </div>
+</Layout>
+
+<style>
+  .post {
+    @apply h-full;
+    @apply px-10 sm:px-16 lg:px-24 xl:px-44;
+    @apply py-28 sm:py-32 lg:py-40;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-5xl xl:text-6xl !important;
+    @apply mb-10 !important;
+  }
+
+  .cover {
+    @apply mb-10 !important;
+    @apply rounded-sm;
+    @apply w-full md:w-5/6 lg:w-4/6;
+    @apply hidden sm:flex;
+  }
+</style>

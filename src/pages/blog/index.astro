@@ -39,12 +39,12 @@ const wildFront = wildPosts.map((p) => {
 <Layout {pageTitle} {pageDescription}>
   <div class="blog">
     <h1>Blog</h1>
-    <div class="flex xl:hidden bg-one mt-16">
+    <div class="flex xl:hidden mt-16">
       <BlogInTheWild {wildFront} />
     </div>
     <div class="blog-preview-section">
       <BlogPreview index="0" frontmatter={frontmatter[0]} slug={slugs[0]} />
-      <div class="hidden xl:flex row-span-2 bg-one mb-12">
+      <div class="hidden xl:flex row-span-2 mb-12">
         <BlogInTheWild {wildFront} />
       </div>
       <BlogPreview index="2" frontmatter={frontmatter[1]} slug={slugs[1]} />
@@ -62,7 +62,7 @@ const wildFront = wildPosts.map((p) => {
   .blog {
     @apply flex flex-col;
     @apply w-full;
-    @apply px-10;
+    @apply px-10 sm:px-16 lg:px-24 xl:px-32;
     @apply py-28 sm:py-32 lg:py-40;
   }
 
