@@ -24,8 +24,6 @@ files.forEach((file) => {
   let pathParts = file.replace("/index.md", "").split("/");
   slugs.push(pathParts[pathParts.length - 1]);
 });
-console.log(slugs);
-
 const frontmatter = posts.map((f) => {
   return f.frontmatter;
 });

@@ -1,5 +1,5 @@
 ---
-export async function getStaticPaths() {
+export async function getStaticPaths({rss}) {
   const allPosts = await Astro.glob("../../content/blog/**/**/*.md");
   const sortedPosts = allPosts.sort(
     (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
@@ -8,25 +8,23 @@ export async function getStaticPaths() {
     return p;
   });
 
-  const files = posts.map((p) => {
-    return p.file;
-  });
-
-  const slugs = [];
-  files.forEach((file) => {
-    let pathParts = file.replace("/index.md", "").split("/");
-    slugs.push(pathParts[pathParts.length - 1]);
-  });
-  return slugs.map((slug) => {
+  return sortedPosts.map((post) => {
+    const pathParts = post.file.replace('/index.md', '').split('/');
+    const slug = pathParts[pathParts.length - 1]
     return {
       params: {
-        slug: slug,
+        slug
       },
-    };
-  });
+      props: {
+        post
+      }
+    }
+  })
 }
 
-const { slug } = Astro.params;
----
+const { post } = Astro.props;
 
-<div>Test</div>
+---
+<div>
+<post.Content/>
+</div>
