@@ -1,0 +1,97 @@
+---
+import BlogInTheWild from "../../components/BlogInTheWild.astro";
+import BlogPreview from "../../components/BlogPreview.vue";
+import Layout from "../../layouts/Default.astro";
+import "../../styles/main.css";
+const pageTitle = "Sandra Rodgers";
+const pageDescription = "Personal blog of Sandra Rodgers";
+
+////////////////  Main Blog  ////////////////
+const allPosts = await Astro.glob("../../content/blog/**/**/*.md");
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+);
+const posts = sortedPosts.map((p) => {
+  return p;
+});
+
+const files = posts.map((p) => {
+  return p.file;
+});
+
+const slugs = [];
+files.forEach((file) => {
+  let pathParts = file.replace("/index.md", "").split("/");
+  slugs.push(pathParts[pathParts.length - 1]);
+});
+console.log(slugs);
+
+const frontmatter = posts.map((f) => {
+  return f.frontmatter;
+});
+
+////////////////  Posts in the Wild  ////////////////
+const wildPosts = await Astro.glob("../../content/wild/index.md");
+
+const wildFront = wildPosts.map((p) => {
+  return p.frontmatter.posts.slice(0, 3);
+});
+---
+
+<Layout {pageTitle} {pageDescription}>
+  <div class="blog">
+    <h1>Blog</h1>
+    <div class="flex xl:hidden bg-one mt-16">
+      <BlogInTheWild {wildFront} />
+    </div>
+    <div class="blog-preview-section">
+      <BlogPreview index="0" frontmatter={frontmatter[0]} slug={slugs[0]} />
+      <div class="hidden xl:flex row-span-2 bg-one mb-12">
+        <BlogInTheWild {wildFront} />
+      </div>
+      <BlogPreview index="2" frontmatter={frontmatter[1]} slug={slugs[1]} />
+      <BlogPreview index="3" frontmatter={frontmatter[2]} slug={slugs[2]} />
+      <BlogPreview index="4" frontmatter={frontmatter[3]} slug={slugs[3]} />
+      <!-- <BlogPreview index="5" /> -->
+    </div>
+    <div class="more">
+      <p>More posts...</p>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .blog {
+    @apply flex flex-col;
+    @apply w-full;
+    @apply px-10;
+    @apply py-28 sm:py-32 lg:py-40;
+  }
+
+  .blog-preview-section {
+    @apply h-screen;
+    @apply mt-8 md:mt-16;
+    @apply w-full;
+    @apply gap-x-0 lg:gap-x-12;
+    @apply grid;
+    @apply grid-cols-2 lg:grid-cols-3;
+    @apply grid-rows-6 sm:grid-rows-5 lg:grid-rows-4;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-rows: 2fr 2fr 2fr 2fr; */
+  }
+
+  h1 {
+    @apply border-2 border-black;
+  }
+
+  .more {
+    @apply w-full;
+    @apply flex justify-end;
+    @apply text-black font-extrabold;
+    @apply mt-12 sm:mt-0;
+  }
+
+  .more p {
+    @apply text-4xl;
+  }
+</style>

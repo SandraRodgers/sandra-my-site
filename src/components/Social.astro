@@ -1,0 +1,29 @@
+<div class="social">
+  <div class="hamburger">MENU</div>
+  <ul>
+    <li>ICON 1</li>
+    <li>ICON 2</li>
+    <li>ICON 3</li>
+    <li>ICON 4</li>
+  </ul>
+</div>
+
+<style>
+  ul {
+    @apply flex justify-between;
+    @apply w-4/6 md:w-3/6 lg:w-2/6;
+    @apply mr-6;
+    @apply border-2 border-two;
+  }
+
+  .social {
+    @apply flex justify-between md:justify-end;
+    @apply py-6;
+    @apply border-2 border-two;
+  }
+
+  .hamburger {
+    @apply flex md:hidden;
+    @apply ml-6;
+  }
+</style>

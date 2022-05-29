@@ -1,0 +1,28 @@
+<nav>
+  <ul>
+    <a href="/"><li>Home</li></a>
+    <a href="/about"><li>About</li></a>
+    <a href="/learnings"><li>Learnings</li></a>
+    <a href="/blog"><li>Blog</li></a>
+    <a href="/interests"><li>Interests</li></a>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    @apply hidden md:flex flex-col;
+    @apply md:h-screen md:w-3/12 lg:w-2/12 border-2 border-white;
+  }
+
+  ul {
+    @apply h-full;
+    @apply flex flex-col justify-evenly;
+  }
+
+  a {
+    @apply flex items-center justify-center;
+    @apply border-2 border-two;
+    @apply h-1/6;
+    @apply font-semibold text-xl;
+  }
+</style>

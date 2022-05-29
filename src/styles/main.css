@@ -1,0 +1,50 @@
+html {
+  @apply bg-black;
+  @apply text-white font-lato;
+}
+body {
+  @apply flex;
+  @apply w-screen;
+  @apply bg-one;
+  /* @apply w-full h-full; */
+}
+
+main {
+  @apply flex justify-center;
+  @apply w-full h-full;
+  @apply bg-three;
+}
+
+main > div {
+  @apply bg-two;
+  /* @apply h-screen; */
+  @apply max-w-full;
+  @apply md:max-w-4xl;
+  @apply lg:max-w-5xl;
+  @apply xl:max-w-6xl;
+  @apply 2xl:max-w-7xl;
+}
+
+p {
+  @apply text-lg sm:text-xl;
+  @apply font-biz;
+}
+
+a {
+  @apply font-cairo;
+}
+
+/* Headings */
+h1 {
+  @apply text-black;
+  @apply font-biz;
+  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl !important;
+  @apply mb-4 !important;
+}
+
+h3 {
+  @apply text-black;
+  @apply font-biz font-extrabold;
+  @apply text-xl !important;
+  @apply mb-4 !important;
+}

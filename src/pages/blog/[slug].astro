@@ -1,0 +1,32 @@
+---
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../../content/blog/**/**/*.md");
+  const sortedPosts = allPosts.sort(
+    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  );
+  const posts = sortedPosts.map((p) => {
+    return p;
+  });
+
+  const files = posts.map((p) => {
+    return p.file;
+  });
+
+  const slugs = [];
+  files.forEach((file) => {
+    let pathParts = file.replace("/index.md", "").split("/");
+    slugs.push(pathParts[pathParts.length - 1]);
+  });
+  return slugs.map((slug) => {
+    return {
+      params: {
+        slug: slug,
+      },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+---
+
+<div>Test</div>

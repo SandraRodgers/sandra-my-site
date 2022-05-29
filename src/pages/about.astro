@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Default.astro";
+import "../styles/main.css";
+const title = "Sandra Rodgers";
+const description = "About Sandra Rodgers";
+---
+
+<Layout {title} {description}>
+  <div class="container">
+    <div class="about">
+      <div class="img-container">
+        <img src="/sandra_portrait.jpeg" />
+      </div>
+      <div class="text-container">
+        <h1>About Me</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    @apply border-2 border-one;
+    @apply px-10;
+    /* @apply px-10 lg:px-44; */
+    @apply py-28 sm:py-32 lg:py-40;
+  }
+
+  .about {
+    @apply flex flex-col xl:flex-row justify-center;
+
+    div {
+      @apply border-2 border-black;
+      @apply w-full xl:w-3/6;
+    }
+
+    .img-container {
+      @apply flex justify-center xl:justify-end;
+
+      img {
+        @apply w-3/6 xl:w-full;
+        /* @apply h-2/6 lg:h-2/6 xl:h-full; */
+        /* @apply w-4/6; */
+      }
+    }
+  }
+
+  .text-container {
+    @apply pl-16;
+    h1 {
+      @apply text-4xl lg:text-5xl xl:text-6xl !important;
+      @apply mt-4 md:mt-8 xl:mt-0;
+    }
+    p {
+    }
+  }
+</style>
