@@ -23,12 +23,12 @@ main > div {
 p {
   @apply text-lg sm:text-xl;
   @apply text-four;
-  @apply font-biz;
+  @apply font-ptmono;
   @apply py-4;
 }
 
 a {
-  @apply font-cairo;
+  @apply font-ptsans;
 }
 
 u {
@@ -38,13 +38,13 @@ u {
 /* Headings */
 h1 {
   @apply text-two;
-  @apply font-biz;
+  @apply font-ptsans;
   @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl !important;
   @apply mb-4 !important;
 }
 
 h3 {
-  @apply font-biz font-black;
+  @apply font-ptsans font-black;
   @apply text-2xl !important;
   @apply mb-4 !important;
 }

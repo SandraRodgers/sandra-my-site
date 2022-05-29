@@ -38,7 +38,7 @@ li {
   @apply mb-6 lg:mb-12;
 
   .title {
-    @apply font-biz text-white;
+    @apply font-ptsans text-white;
     @apply text-4xl !important;
   }
 }
@@ -74,7 +74,7 @@ li {
 }
 
 .description {
-  @apply font-biz;
+  @apply font-ptmono;
   @apply text-base text-four;
 }
 </style>

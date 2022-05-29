@@ -5,6 +5,8 @@ module.exports = {
       cairo: ["Cairo", "sans-serif"],
       lato: ["Lato", "sans-serif"],
       biz: ["'BIZ UDPMincho'", "serif"],
+      ptmono: ["'PT Mono'", "monospace"],
+      ptsans: ["'PT Sans'", "sans-serif"],
     },
     colors: {
       black: "#000000",

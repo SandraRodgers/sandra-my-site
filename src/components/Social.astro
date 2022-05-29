@@ -3,7 +3,11 @@ import { Icon } from "astro-icon";
 ---
 
 <div class="social">
-  <div class="home">Home</div>
+  <div class="flex">
+    <a href="/"> <span class="home text-three">Home</span></a><a href="/blog"
+      ><span class="blog text-one animate-pulse">Blog</span></a
+    >
+  </div>
   <ul>
     <li>
       <a
@@ -57,11 +61,12 @@ import { Icon } from "astro-icon";
     @apply py-6;
   }
 
-  .home {
+  .home,
+  .blog {
     @apply flex md:hidden;
     @apply ml-6;
-    @apply font-cairo font-extrabold;
-    @apply text-xl text-three;
+    @apply font-ptmono font-extrabold;
+    @apply text-xl;
     @apply cursor-pointer;
   }
 
