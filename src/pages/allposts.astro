@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Default.astro";
+import "../styles/main.css";
+const pageTitle = "Sandra Rodgers";
+const pageDescription = "Personal blog of Sandra Rodgers";
+
+////////////////  Main Blog  ////////////////
+const allPosts = await Astro.glob("../content/blog/**/**/*.md");
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+);
+const posts = sortedPosts.map((p) => {
+  return p;
+});
+---
+
+<Layout {pageTitle} {pageDescription}>
+  <div class="blog">
+    <h1>More Posts</h1>
+    <ul>
+      {posts.slice(3, posts.length).map((post) => (
+  <li>
+    <a href={'blog/'+post.file.replace("/index.md", "").split("/").pop()}>
+      <div class="line-one">
+      <span class="date">{post.frontmatter.date.slice(0, 10)}</span>
+      <h3>{post.frontmatter.title}</h3>
+      </div>
+      <p>{post.frontmatter.description}</p>
+    </a>
+  </li>
+))}
+    </ul>
+  </div>
+</Layout>
+
+<style>
+  .blog {
+    @apply px-6 sm:px-16 lg:px-24 xl:px-32;
+    @apply py-16 sm:py-32 lg:py-40;
+  }
+
+  .line-one {
+    @apply border-b border-white;
+  }
+
+  .title {
+    @apply font-ptsans text-white;
+    @apply text-2xl sm:text-4xl !important;
+  }
+
+  .date {
+    @apply text-three mr-4;
+    @apply text-2xl sm:text-3xl !important;
+  }
+
+  li {
+    @apply p-8;
+  }
+</style>

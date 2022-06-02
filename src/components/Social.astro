@@ -15,7 +15,7 @@ import { Icon } from "astro-icon";
         rel="noreferrer"
         target="_blank"
       >
-        <Icon height="1.85rem" name="simple-icons:github" /></a
+        <Icon class="h-6 md:h-8" name="simple-icons:github" /></a
       >
     </li>
     <li>
@@ -24,7 +24,7 @@ import { Icon } from "astro-icon";
         rel="noreferrer"
         target="_blank"
       >
-        <Icon height="1.85rem" name="simple-icons:codepen" /></a
+        <Icon class="h-6 md:h-8" name="simple-icons:codepen" /></a
       >
     </li>
     <li>
@@ -33,7 +33,7 @@ import { Icon } from "astro-icon";
         rel="noreferrer"
         target="_blank"
       >
-        <Icon height="1.85rem" name="simple-icons:linkedin" /></a
+        <Icon class="h-6 md:h-8" name="simple-icons:linkedin" /></a
       >
     </li>
     <li>
@@ -42,7 +42,7 @@ import { Icon } from "astro-icon";
         rel="noreferrer"
         target="_blank"
       >
-        <Icon height="1.85rem" name="simple-icons:twitter" /></a
+        <Icon class="h-6 md:h-8" name="simple-icons:twitter" /></a
       >
     </li>
   </ul>
@@ -50,8 +50,8 @@ import { Icon } from "astro-icon";
 
 <style>
   ul {
-    @apply flex justify-between;
-    @apply w-4/6 md:w-3/6 lg:w-2/6;
+    @apply flex justify-evenly sm:justify-between items-center;
+    @apply w-6/12 md:w-5/12 lg:w-3/12;
     /* @apply mr-6 lg:mr-32; */
     @apply text-three;
   }
@@ -71,7 +71,7 @@ import { Icon } from "astro-icon";
   }
 
   ul {
-    @apply px-8 xl:px-16;
-    @apply pl-24 md:pl-0;
+    @apply px-0 sm:px-8 xl:px-16;
+    @apply pl-4 sm:pl-24 md:pl-0;
   }
 </style>

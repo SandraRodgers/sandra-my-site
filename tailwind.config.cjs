@@ -31,7 +31,12 @@ module.exports = {
       "6xl": "4rem",
       "7xl": "5rem",
     },
-    extend: {},
+    extend: {
+      gridTemplateRows: {
+        // Simple 8 row grid
+        9: "repeat(9, minmax(0, 1fr))",
+      },
+    },
   },
   plugins: ["postcss-import"],
 };

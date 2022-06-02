@@ -15,6 +15,27 @@ const posts = sortedPosts.map((p) => {
   return p;
 });
 
+let showPost0 = false;
+let showPost1 = false;
+let showPost2 = false;
+let showPost3 = false;
+
+if (posts.length > 0) {
+  showPost0 = true;
+}
+
+if (posts.length > 1) {
+  showPost1 = true;
+}
+
+if (posts.length > 2) {
+  showPost2 = true;
+}
+
+if (posts.length > 3) {
+  showPost2 = true;
+}
+
 const files = posts.map((p) => {
   return p.file;
 });
@@ -39,22 +60,47 @@ const wildFront = wildPosts.map((p) => {
 <Layout {pageTitle} {pageDescription}>
   <div class="blog">
     <h1>Blog</h1>
-    <div class="flex xl:hidden mt-16">
-      <BlogInTheWild {wildFront} />
-    </div>
+    <BlogInTheWild {wildFront} />
     <div class="blog-preview-section">
-      <BlogPreview index="0" frontmatter={frontmatter[0]} slug={slugs[0]} />
-      <div class="hidden xl:flex row-span-2 mb-12">
-        <BlogInTheWild {wildFront} />
-      </div>
-      <BlogPreview index="2" frontmatter={frontmatter[1]} slug={slugs[1]} />
-      <BlogPreview index="3" frontmatter={frontmatter[2]} slug={slugs[2]} />
-      <BlogPreview index="4" frontmatter={frontmatter[3]} slug={slugs[3]} />
-      <!-- <BlogPreview index="5" /> -->
+      {showPost0 ?
+      <BlogPreview
+        index="0"
+        frontmatter={frontmatter[0]}
+        slug={slugs[0]}
+        show={showPost0}
+      />: null
+      }
+      {showPost1 ?
+      <BlogPreview
+        index="2"
+        frontmatter={frontmatter[1]}
+        slug={slugs[1]}
+        show={showPost1}
+      />: null
+      }
+      {showPost2 ?
+      <BlogPreview
+        index="3"
+        frontmatter={frontmatter[2]}
+        slug={slugs[2]}
+        show={showPost2}
+      />: null
+      }
+      {showPost3 ?
+    <BlogPreview
+        index="4"
+        frontmatter={frontmatter[3]}
+        slug={slugs[3]}
+        show={showPost3}
+        class={showPost3}
+      /> : null
+      }
     </div>
+    {showPost1 ?
     <div class="more">
-      <p>More posts...</p>
-    </div>
+      <a href="/allposts"><p>More posts...</p></a>
+    </div>: null
+    }
   </div>
 </Layout>
 
@@ -62,8 +108,8 @@ const wildFront = wildPosts.map((p) => {
   .blog {
     @apply flex flex-col;
     @apply w-full;
-    @apply px-10 sm:px-16 lg:px-24 xl:px-32;
-    @apply py-28 sm:py-32 lg:py-40;
+    @apply px-6 sm:px-16 lg:px-24 xl:px-32;
+    @apply py-16 sm:py-32 lg:py-40;
   }
 
   .blog-preview-section {
@@ -74,12 +120,12 @@ const wildFront = wildPosts.map((p) => {
     @apply grid;
     @apply grid-cols-2 lg:grid-cols-3;
     @apply grid-rows-6 sm:grid-rows-5 lg:grid-rows-4;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    /* grid-template-rows: 2fr 2fr 2fr 2fr; */
   }
 
   h1 {
     @apply border-2 border-black;
+    @apply text-6xl lg:text-7xl !important;
+    @apply mb-16 !important;
   }
 
   .more {

@@ -4,7 +4,11 @@ const info = wildFront[0];
 ---
 
 <ul class="card-1">
-  <h3>Recent Writings In the Wild</h3>
+  <h3>
+    Recent Writings In the Wild <span class="text-one text-lg"
+      >(External Links)</span
+    >
+  </h3>
   <li>
     <a href={info[0].link}>
       <span class="text-three mr-4">{info[0].date.slice(0, 10)}</span><span
@@ -31,13 +35,14 @@ const info = wildFront[0];
 
 <style>
   .card-1 {
-    @apply border-2 border-white;
-    @apply col-span-3;
-    @apply row-span-2 lg:row-span-6;
+    @apply border-2 border-white rounded-sm;
+    @apply p-8;
+    /* @apply col-span-3;
+    @apply row-span-1;
     @apply mb-0 lg:mb-12;
     @apply p-8;
     @apply text-xl;
-    @apply w-full h-full;
+    @apply w-full h-full; */
   }
   li {
     @apply my-4;
