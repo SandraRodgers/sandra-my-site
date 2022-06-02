@@ -7,21 +7,45 @@ const description = "About Sandra Rodgers";
 
 <Layout {title} {description}>
   <div class="container">
+    <h1>About Me...</h1>
     <div class="about">
       <div class="img-container">
         <img src="/sandra_portrait.jpeg" />
       </div>
       <div class="text-container">
-        <h1>About Me</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          enim ad minim veniam, quis nostrud exercitation
+          After a ten year career as an English and ESL teacher for high school
+          and middle school students, I pivoted in January 2019 to an entirely
+          new career as a front-end developer. My launchpad was a three month
+          immersive web development coding bootcamp, where I learned
+          fundamentals of creating web applications. I've always had an interest
+          in art and design in addition to my love for teaching, so I knew early
+          on that front-end development would be the direction I would take as
+          an engineer. I had the awesome opportunity to continue on at the
+          bootcamp for another cohort, but this time as a mentor, so I had the
+          chance to teach lessons and work one-on-one with students learning to
+          code.
+        </p>
+        <p>
+          In August 2019, I took my first engineering job at a financial-tech
+          company, where I worked for two years on the UXDev team building a UI
+          component library and learning about the process of creating and
+          implementing a design system from the ground up. The team I worked
+          with was made up of incredibly intelligent, supportive,talented
+          front-end developers and I took advantage of a great opportunity to
+          learn as much as possible from them. This gave me a great start with a
+          solid foundation in front-end development.
+        </p>
+        <p>
+          It isn't surprising that I found my way to developer relations, a role
+          that combines education, community, and engineering. I work as a
+          developer experience engineer at Deepgram, striving to make the
+          experience of using Deepgram's API a delightful and seamless one. I
+          helped build our education platform at <a
+            href="https://developers.deepgram.com/"
+            target="_blank">developers.deepgram.com</a
+          >, and I write educational content to support users of Deepgram's
+          speech-to-text API.
         </p>
       </div>
     </div>
@@ -30,36 +54,47 @@ const description = "About Sandra Rodgers";
 
 <style>
   .container {
-    @apply px-10 sm:px-16 xl:px-44;
+    @apply px-10 sm:px-16 lg:px-44;
+    /* @apply px-10 sm:px-16 xl:px-44; */
     /* @apply px-10 lg:px-44; */
     @apply py-28 sm:py-32 lg:py-40;
   }
 
   .about {
-    @apply flex flex-col lg:flex-row justify-center;
+    @apply flex flex-col  items-center;
     @apply w-full;
 
     .img-container {
       @apply flex justify-center  xl:justify-center;
-      @apply w-full lg:w-2/6;
+      /* @apply w-full lg:w-3/6; */
+      @apply w-full;
 
       img {
+        @apply w-2/6;
+        @apply py-8;
         /* @apply h-3/6; */
-        @apply h-3/6 lg:h-2/6 xl:h-3/6;
+        /* @apply h-3/6 lg:h-2/6 xl:h-2/6; */
         /* @apply h-2/6 lg:h-2/6 xl:h-full; */
-        @apply w-4/6 lg:w-auto;
+        /* @apply w-4/6; */
       }
     }
   }
 
   .text-container {
-    @apply pl-8 lg:pl-16;
-    @apply w-full lg:w-4/6;
+    @apply pl-8;
+    /* @apply w-full lg:w-3/6; */
     h1 {
       @apply text-5xl lg:text-6xl !important;
       @apply mt-4 md:mt-8 xl:mt-0;
     }
     p {
+      /* @apply text-base; */
+    }
+
+    a {
+      @apply font-ptmono;
+      @apply underline underline-offset-2 decoration-one text-one;
+      @apply hover:bg-one hover:text-black;
     }
   }
 </style>

@@ -43,6 +43,13 @@ h1 {
   @apply mb-4 !important;
 }
 
+h1 {
+  @apply text-two;
+  @apply font-ptsans;
+  @apply text-5xl lg:text-6xl !important;
+  @apply mt-4 md:mt-8 xl:mt-0;
+}
+
 h3 {
   @apply font-ptsans font-black;
   @apply text-2xl !important;
