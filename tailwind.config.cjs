@@ -2,9 +2,6 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
-      cairo: ["Cairo", "sans-serif"],
-      lato: ["Lato", "sans-serif"],
-      biz: ["'BIZ UDPMincho'", "serif"],
       ptmono: ["'PT Mono'", "monospace"],
       ptsans: ["'PT Sans'", "sans-serif"],
     },

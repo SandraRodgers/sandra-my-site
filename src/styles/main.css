@@ -1,6 +1,6 @@
 html {
   @apply bg-black;
-  @apply text-white font-lato;
+  @apply text-white font-ptmono;
 }
 body {
   @apply flex;
@@ -28,7 +28,9 @@ p {
 }
 
 a {
-  @apply font-ptsans;
+  @apply font-ptmono;
+  @apply text-one !important;
+  @apply hover:bg-one hover:text-black !important;
 }
 
 u {
