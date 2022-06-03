@@ -40,6 +40,7 @@ u {
 li {
   @apply font-ptmono;
   @apply text-lg sm:text-xl;
+  @apply text-four;
 }
 li::marker {
   @apply text-two !important;

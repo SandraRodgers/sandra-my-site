@@ -35,9 +35,7 @@ module.exports = {
       },
       typography: {
         DEFAULT: {
-          css: {
-            li: "fontFamily:'PT Mono'; color: rgb(163 181 227)",
-          },
+          css: {},
         },
       },
     },
