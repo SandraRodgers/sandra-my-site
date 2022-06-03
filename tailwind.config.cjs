@@ -33,7 +33,14 @@ module.exports = {
         // Simple 8 row grid
         9: "repeat(9, minmax(0, 1fr))",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            li: "fontFamily:'PT Mono'; color: rgb(163 181 227)",
+          },
+        },
+      },
     },
   },
-  plugins: ["postcss-import"],
+  plugins: ["postcss-import", require("@tailwindcss/typography")],
 };

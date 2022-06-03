@@ -37,6 +37,14 @@ u {
   @apply underline underline-offset-2 decoration-three;
 }
 
+li {
+  @apply font-ptmono;
+  @apply text-lg sm:text-xl;
+}
+li::marker {
+  @apply text-two !important;
+}
+
 /* Headings */
 h1 {
   @apply text-two;
