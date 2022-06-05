@@ -1,0 +1,22 @@
+---
+const { text, style, href } = Astro.props;
+---
+
+<a {href} class={style}>{text}</a>
+
+<style>
+  a {
+    @apply px-4 py-2;
+    @apply font-ptmono;
+    @apply hover:bg-black hover:text-white hover:border-white;
+  }
+  .primary {
+    @apply border-2 border-one rounded-sm;
+    @apply text-one;
+  }
+
+  .tertiary {
+    @apply border-2 border-three rounded-sm;
+    @apply text-three;
+  }
+</style>

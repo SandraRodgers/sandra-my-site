@@ -1,18 +1,45 @@
 ---
+import LinkButton from "../components/LinkButton.astro";
 import Layout from "../layouts/Default.astro";
 import "../styles/main.css";
+import Animator from "../components/Animator.vue";
 const title = "Sandra Rodgers";
 const description = "Personal website of Sandra Rodgers";
+const greeting = "Hi, I'm Sandra";
+const iterateArray = greeting.split("");
+iterateArray.map((letter, i) => {
+  console.log(i);
+});
 ---
 
 <Layout {title} {description}>
-  <div>
-    <h1>Hi, I'm Sandra</h1>
+  <div class="home">
+    <h1 class="">
+      hi, I&apos;m <br class="block md:hidden" />
+      <span class="relative">
+        <span
+          class="h-20 pt-2 overflow-x-hidden whitespace-nowrap text-brand-accent"
+        >
+          sandra <span class="text-3xl md:text-5xl">👋</span>
+        </span>
+        <span
+          class={`absolute -bottom-0 left-0 -top-1 inline-block bg-gray-900 w-full animate-type will-change`}
+        ></span>
+      </span>
+    </h1>
+    <!-- <h1 class="animate-fadein">
+      Hi I'm Sandra <span class="animate-waving-hand">👋🏻</span>
+    </h1> -->
+    <!-- <h1>
+    {iterateArray.map((letter, i)=>{  
+      return <Animator client:load time={i*10}>{letter}</Animator>
+    })}</h1> -->
+
     <p>
-      I’m a <u>developer experience engineer</u>. My job is to make the
-      experience of using a technology more pleasant and seamless, focusing on
-      the things that matter to software engineers and web developers: tools,
-      documentation, UI, processes, and education.
+      I’m a <u>developer experience engineer</u>. I make the experience of using
+      a technology more pleasant and seamless, focusing on the things that
+      matter to software engineers and web developers: tools, documentation, UI,
+      processes, and education.
     </p><p>
       With a background in teaching and front-end engineering, I also have a
       love for design, UX, and design systems.
@@ -23,12 +50,55 @@ const description = "Personal website of Sandra Rodgers";
         target="_blank">Deepgram</a
       > and writing content about web development.
     </p>
-  </div></Layout
->
+    <div class="flex flex-wrap md:justify-end md:mr-40 py-4">
+      <LinkButton
+        href="mailto:sandra.rodgers.dev@gmail.com"
+        text="Contact"
+        style="primary h-fit ml-2 mt-2"
+      />
+
+      <LinkButton
+        href="/about"
+        text="About"
+        style="primary ml-2 mt-2 block md:hidden"
+      />
+      <LinkButton
+        href="/blog"
+        text="Blog"
+        style="tertiary ml-2 mt-2 block md:hidden"
+      />
+      <LinkButton
+        href="/teaching"
+        text="Teaching"
+        style="primary ml-2 mt-2 block md:hidden"
+      />
+      <LinkButton
+        href="/interests"
+        text="Interests"
+        style="primary ml-2 mt-2 block md:hidden"
+      />
+    </div>
+  </div>
+</Layout>
 
 <style>
-  div {
+  .home {
     @apply px-10 sm:px-16 lg:px-44;
     @apply py-28 sm:py-32 lg:py-40;
+  }
+
+  h1 {
+    @apply transition-opacity;
+    /* @apply absolute; */
+  }
+  .greeting {
+    @apply absolute;
+  }
+  .greeting:before {
+    content: "Hi, I'm Sandra";
+    top: 5;
+    left: 0;
+    /* opacity:0; */
+    @apply absolute;
   }
 </style>
