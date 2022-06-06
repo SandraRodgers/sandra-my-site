@@ -10,8 +10,8 @@ const description = "Personal website of Sandra Rodgers";
 <Layout {title} {description}>
   <div class="home">
     <Animator
-      height={"95px"}
-      width={"500px"}
+      height={"100%"}
+      width={"100%"}
       bezier={"ease-out"}
       second={"1.5"}
       fromLeft={"675px"}
@@ -69,5 +69,6 @@ const description = "Personal website of Sandra Rodgers";
   .home {
     @apply px-10 sm:px-16 lg:px-44;
     @apply py-28 sm:py-32 lg:py-40;
+    @apply w-full;
   }
 </style>
