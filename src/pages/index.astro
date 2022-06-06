@@ -1,18 +1,29 @@
 ---
+import LinkButton from "../components/LinkButton.astro";
 import Layout from "../layouts/Default.astro";
 import "../styles/main.css";
+import Animator from "../components/Animator.astro";
 const title = "Sandra Rodgers";
 const description = "Personal website of Sandra Rodgers";
 ---
 
 <Layout {title} {description}>
-  <div>
-    <h1>Hi, I'm Sandra</h1>
+  <div class="home">
+    <Animator
+      height={"95px"}
+      width={"500px"}
+      bezier={"ease-out"}
+      second={"1.5"}
+      fromLeft={"675px"}
+      delay={"0s"}
+    >
+      <h1 class="mb-4 text-5xl lg:text-6xl;">Hi, I'm Sandra</h1>
+    </Animator>
     <p>
-      I’m a <u>developer experience engineer</u>. My job is to make the
-      experience of using a technology more pleasant and seamless, focusing on
-      the things that matter to software engineers and web developers: tools,
-      documentation, UI, processes, and education.
+      I’m a <u>developer experience engineer</u>. I make the experience of using
+      technology more pleasant and seamless, focusing on the things that matter
+      to software engineers and web developers: tools, documentation, UI,
+      processes, and education.
     </p><p>
       With a background in teaching and front-end engineering, I also have a
       love for design, UX, and design systems.
@@ -23,11 +34,39 @@ const description = "Personal website of Sandra Rodgers";
         target="_blank">Deepgram</a
       > and writing content about web development.
     </p>
-  </div></Layout
->
+    <div class="flex flex-wrap md:justify-end md:mr-40 py-4">
+      <LinkButton
+        href="mailto:sandra.rodgers.dev@gmail.com"
+        text="Contact"
+        style="primary h-fit ml-2 mt-2"
+      />
+
+      <LinkButton
+        href="/about"
+        text="About"
+        style="primary ml-2 mt-2 block md:hidden"
+      />
+      <LinkButton
+        href="/blog"
+        text="Blog"
+        style="tertiary ml-2 mt-2 block md:hidden"
+      />
+      <LinkButton
+        href="/teaching"
+        text="Teaching"
+        style="primary ml-2 mt-2 block md:hidden"
+      />
+      <LinkButton
+        href="/interests"
+        text="Interests"
+        style="primary ml-2 mt-2 block md:hidden"
+      />
+    </div>
+  </div>
+</Layout>
 
 <style>
-  div {
+  .home {
     @apply px-10 sm:px-16 lg:px-44;
     @apply py-28 sm:py-32 lg:py-40;
   }

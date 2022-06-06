@@ -28,9 +28,7 @@ p {
 }
 
 a {
-  @apply font-ptmono;
-  @apply text-one !important;
-  @apply hover:bg-one hover:text-black !important;
+  @apply hover:bg-one hover:text-black;
 }
 
 u {
@@ -42,29 +40,16 @@ li {
   @apply text-lg sm:text-xl;
   @apply text-four;
 }
-li::marker {
-  @apply text-two !important;
-}
-
-/* Headings */
-h1 {
-  @apply text-two;
-  @apply font-ptsans;
-  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl !important;
-  @apply mb-4 !important;
-}
 
 h1 {
   @apply text-two;
   @apply font-ptsans;
-  @apply text-5xl lg:text-6xl !important;
   @apply mt-4 md:mt-8 xl:mt-0;
+  @apply text-4xl md:text-5xl lg:text-5xl xl:text-6xl !important;
 }
 
 h3 {
   @apply font-ptsans font-black;
-  @apply text-2xl !important;
-  @apply mb-4 !important;
 }
 
 .post {

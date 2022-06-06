@@ -1,52 +1,62 @@
 ---
 import { Icon } from "astro-icon";
+import Animator from "./Animator.astro";
 ---
 
-<div class="social">
-  <div class="flex">
-    <a href="/"> <span class="home text-three">Home</span></a><a href="/blog"
-      ><span class="blog text-one animate-pulse">Blog</span></a
-    >
+<Animator
+  height={"75px"}
+  width={"100vw"}
+  bezier={"ease-in"}
+  second={"1.2"}
+  fromLeft={"100vw"}
+  delay={"0s"}
+>
+  <div class="social">
+    <div class="flex">
+      <a href="/"> <span class="home text-three">Home</span></a><a href="/blog"
+        ><span class="blog text-one animate-pulse">Blog</span></a
+      >
+    </div>
+    <ul>
+      <li>
+        <a
+          href="https://github.com/SandraRodgers"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <Icon class="h-6" name="simple-icons:github" /></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://codepen.io/sandrarodgers"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <Icon class="h-6" name="simple-icons:codepen" /></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/sandra-rodgers/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <Icon class="h-6" name="simple-icons:linkedin" /></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://twitter.com/sandra_rodgers_"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <Icon class="h-6" name="simple-icons:twitter" /></a
+        >
+      </li>
+    </ul>
   </div>
-  <ul>
-    <li>
-      <a
-        href="https://github.com/SandraRodgers"
-        rel="noreferrer"
-        target="_blank"
-      >
-        <Icon class="h-6" name="simple-icons:github" /></a
-      >
-    </li>
-    <li>
-      <a
-        href="https://codepen.io/sandrarodgers"
-        rel="noreferrer"
-        target="_blank"
-      >
-        <Icon class="h-6" name="simple-icons:codepen" /></a
-      >
-    </li>
-    <li>
-      <a
-        href="https://www.linkedin.com/in/sandra-rodgers/"
-        rel="noreferrer"
-        target="_blank"
-      >
-        <Icon class="h-6" name="simple-icons:linkedin" /></a
-      >
-    </li>
-    <li>
-      <a
-        href="https://twitter.com/sandra_rodgers_"
-        rel="noreferrer"
-        target="_blank"
-      >
-        <Icon class="h-6" name="simple-icons:twitter" /></a
-      >
-    </li>
-  </ul>
-</div>
+</Animator>
 
 <style>
   ul {

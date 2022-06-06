@@ -30,8 +30,27 @@ module.exports = {
     },
     extend: {
       gridTemplateRows: {
-        // Simple 8 row grid
+        // 9 row grid:
         9: "repeat(9, minmax(0, 1fr))",
+      },
+      animation: {
+        fade: "fade 1s ease-in",
+        "fade-delay-100": "fade 1s ease-in .1s",
+        "fade-delay-200": "fade 1s ease-in .2s",
+        "fade-delay-300": "fade 1s ease-in .3s",
+        "fade-delay-400": "fade 1s ease-in .4s",
+        "fade-delay-500": "fade 1s ease-in .5s",
+        "fade-delay-600": "fade 1s ease-in .6s",
+        "fade-delay-700": "fade 1s ease-in .7s",
+        "fade-delay-800": "fade 1s ease-in .8s",
+        "fade-delay-900": "fade 1s ease-in .9s",
+        "fade-delay-1000": "fade 1s ease-in 1s",
+      },
+      keyframes: {
+        fade: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
       typography: {
         DEFAULT: {

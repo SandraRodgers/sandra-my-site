@@ -12,40 +12,31 @@ const info = wildFront[0];
   <li>
     <a href={info[0].link}>
       <span class="text-three mr-4">{info[0].date.slice(0, 10)}</span><span
-        class="font-ptmono text-white">{info[0].title}</span
+        class="font-ptmono text-white hover:text-two">{info[0].title}</span
       ><span class="ml-2 text-one">{`${info[0].source}`}</span></a
     >
   </li>
   <li>
     <a href={info[1].link}>
       <span class="text-three mr-4">{info[1].date.slice(0, 10)}</span><span
-        class="font-ptmono text-white">{info[1].title}</span
+        class="font-ptmono text-white hover:text-two">{info[1].title}</span
       >
       <span class="ml-2 text-one">{`${info[1].source}`}</span></a
     >
   </li>
-  <!-- <li>
-    <a href={info[2].link}>
-      <span class="text-three  mr-4">{info[2].date.slice(0, 10)}</span><span
-        >{info[2].title}</span
-      ><span class="ml-2">{`(${info[2].source})`}</span></a
-    >
-  </li> -->
 </ul>
 
 <style>
   .card-1 {
     @apply border-2 border-white rounded-sm;
     @apply p-8;
-    /* @apply col-span-3;
-    @apply row-span-1;
-    @apply mb-0 lg:mb-12;
-    @apply p-8;
-    @apply text-xl;
-    @apply w-full h-full; */
   }
   li {
     @apply my-4;
     @apply text-base;
+  }
+
+  a {
+    @apply hover:bg-black;
   }
 </style>
