@@ -1,6 +1,8 @@
 ---
 const { height, width, bezier, delay, second, classes, fromLeft, fromTop } =
   Astro.props;
+const cssHeight = height;
+const cssWidth = width;
 ---
 
 <div class="contain-animation">
@@ -8,12 +10,12 @@ const { height, width, bezier, delay, second, classes, fromLeft, fromTop } =
     <slot />
     <span
       class={`cover ${classes}`}
-      style={`height:${height}; width:${width}; animation: walk ${second}s ${bezier} ${delay}; margin-top:${fromTop}; transform:translateX(${fromLeft});`}
+      style={`animation: walk ${second}s ${bezier} ${delay}; margin-top:${fromTop}; transform:translateX(${fromLeft});`}
     ></span>
   </div>
 </div>
 
-<style>
+<style define:vars={{ width: cssWidth, height: cssHeight }}>
   .contain-element {
     position: relative;
   }
@@ -23,12 +25,19 @@ const { height, width, bezier, delay, second, classes, fromLeft, fromTop } =
   }
 
   @keyframes walk {
-    from {
+    0% {
       transform: translateX(0%);
       margin-top: 0;
+      width: var(--width);
+      height: var(--height);
     }
-    70% {
-      opacity: 1;
+    90% {
+      width: var(--width);
+      height: var(--height);
+    }
+    100% {
+      width: 0;
+      height: 0;
     }
   }
 </style>
