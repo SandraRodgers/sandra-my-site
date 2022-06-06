@@ -1,5 +1,5 @@
 ---
-const { height, width, steps, delay, second, classes, fromLeft, fromTop } =
+const { height, width, bezier, delay, second, classes, fromLeft, fromTop } =
   Astro.props;
 ---
 
@@ -8,7 +8,7 @@ const { height, width, steps, delay, second, classes, fromLeft, fromTop } =
     <slot />
     <span
       class={`cover ${classes}`}
-      style={`height:${height}; width:${width}; animation: walk ${second}s steps(${steps}, end) forwards ${delay}; margin-top:${fromTop}; transform:translateX(${fromLeft});`}
+      style={`height:${height}; width:${width}; animation: walk ${second}s ${bezier} ${delay}; margin-top:${fromTop}; transform:translateX(${fromLeft});`}
     ></span>
   </div>
 </div>
@@ -26,6 +26,9 @@ const { height, width, steps, delay, second, classes, fromLeft, fromTop } =
     from {
       transform: translateX(0%);
       margin-top: 0;
+    }
+    70% {
+      opacity: 1;
     }
   }
 </style>
