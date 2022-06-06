@@ -24,6 +24,7 @@ const cssWidth = width;
     @apply absolute bg-black top-0 left-0;
   }
 
+  /* mobile */
   @keyframes walk {
     0% {
       transform: translateX(0%);
@@ -31,13 +32,27 @@ const cssWidth = width;
       width: var(--width);
       height: var(--height);
     }
-    90% {
-      width: var(--width);
-      height: var(--height);
-    }
-    100% {
+    80% {
       width: 0;
       height: 0;
+    }
+  }
+  @media (min-width: 768px) {
+    @keyframes walk {
+      0% {
+        transform: translateX(0%);
+        margin-top: 0;
+        width: var(--width);
+        height: var(--height);
+      }
+      90% {
+        width: var(--width);
+        height: var(--height);
+      }
+      100% {
+        width: 0;
+        height: 0;
+      }
     }
   }
 </style>
