@@ -2,39 +2,23 @@
 import LinkButton from "../components/LinkButton.astro";
 import Layout from "../layouts/Default.astro";
 import "../styles/main.css";
-import Animator from "../components/Animator.vue";
+import Animator from "../components/Animator.astro";
 const title = "Sandra Rodgers";
 const description = "Personal website of Sandra Rodgers";
-const greeting = "Hi, I'm Sandra";
-const iterateArray = greeting.split("");
-iterateArray.map((letter, i) => {
-  console.log(i);
-});
 ---
 
 <Layout {title} {description}>
   <div class="home">
-    <h1 class="">
-      hi, I&apos;m <br class="block md:hidden" />
-      <span class="relative">
-        <span
-          class="h-20 pt-2 overflow-x-hidden whitespace-nowrap text-brand-accent"
-        >
-          sandra <span class="text-3xl md:text-5xl">👋</span>
-        </span>
-        <span
-          class={`absolute -bottom-0 left-0 -top-1 inline-block bg-gray-900 w-full animate-type will-change`}
-        ></span>
-      </span>
-    </h1>
-    <!-- <h1 class="animate-fadein">
-      Hi I'm Sandra <span class="animate-waving-hand">👋🏻</span>
-    </h1> -->
-    <!-- <h1>
-    {iterateArray.map((letter, i)=>{  
-      return <Animator client:load time={i*10}>{letter}</Animator>
-    })}</h1> -->
-
+    <Animator
+      height={"75px"}
+      width={"500px"}
+      steps={"1000"}
+      second={".8"}
+      fromLeft={"675px"}
+      delay={"0s"}
+    >
+      <h1>Hi, I'm Sandra</h1>
+    </Animator>
     <p>
       I’m a <u>developer experience engineer</u>. I make the experience of using
       a technology more pleasant and seamless, focusing on the things that
@@ -85,20 +69,5 @@ iterateArray.map((letter, i) => {
   .home {
     @apply px-10 sm:px-16 lg:px-44;
     @apply py-28 sm:py-32 lg:py-40;
-  }
-
-  h1 {
-    @apply transition-opacity;
-    /* @apply absolute; */
-  }
-  .greeting {
-    @apply absolute;
-  }
-  .greeting:before {
-    content: "Hi, I'm Sandra";
-    top: 5;
-    left: 0;
-    /* opacity:0; */
-    @apply absolute;
   }
 </style>

@@ -1,11 +1,24 @@
+---
+import Animator from "./Animator.astro";
+---
+
 <nav>
-  <ul>
-    <a href="/"><li>Home</li></a>
-    <a href="/about"><li>About</li></a>
-    <a href="/teaching"><li>Teaching</li></a>
-    <a class="blog" href="/blog"><li>Blog</li></a>
-    <a href="/interests"><li>Interests</li></a>
-  </ul>
+  <Animator
+    height={"100vh"}
+    steps={"1000"}
+    second={"1"}
+    fromTop={"100vh"}
+    classes={"w-full"}
+    delay={"0s"}
+  >
+    <ul class="animate-fade">
+      <a href="/"><li>Home</li></a>
+      <a href="/about"><li>About</li></a>
+      <a href="/teaching"><li>Teaching</li></a>
+      <a class="blog" href="/blog"><li>Blog</li></a>
+      <a href="/interests"><li>Interests</li></a>
+    </ul>
+  </Animator>
 </nav>
 
 <style>
@@ -16,7 +29,7 @@
   }
 
   ul {
-    @apply h-full;
+    @apply h-screen;
     @apply flex flex-col justify-evenly;
   }
 
