@@ -4,7 +4,7 @@ import Animator from "./Animator.astro";
 
 <nav>
   <Animator
-    height={"100vh"}
+    height={"100%"}
     bezier={"ease-in"}
     second={".8"}
     fromTop={"-100vh"}
@@ -26,6 +26,7 @@ import Animator from "./Animator.astro";
     @apply hidden md:flex flex-col;
     @apply md:h-screen md:w-3/12 lg:w-2/12;
     @apply sticky top-0;
+    height: 100vh;
   }
 
   ul {
