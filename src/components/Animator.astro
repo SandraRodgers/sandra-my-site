@@ -1,8 +1,6 @@
 ---
-const { height, width, bezier, delay, second, classes, fromLeft, fromTop } =
+const { height, width, bezier, second, classes, fromLeft, fromTop, delay } =
   Astro.props;
-const cssHeight = height;
-const cssWidth = width;
 ---
 
 <div class="contain-animation">
@@ -10,18 +8,29 @@ const cssWidth = width;
     <slot />
     <span
       class={`cover ${classes}`}
-      style={`animation: walk ${second}s ${bezier} ${delay}; margin-top:${fromTop}; transform:translateX(${fromLeft});`}
+      style={` margin-top:${fromTop}; transform:translateX(${fromLeft});`}
     ></span>
   </div>
 </div>
 
-<style define:vars={{ width: cssWidth, height: cssHeight }}>
+<style
+  define:vars={{
+    width,
+    height,
+    second,
+    bezier,
+    fromTop,
+    fromLeft,
+    delay,
+  }}
+>
   .contain-element {
     position: relative;
   }
 
   .cover {
     @apply absolute bg-black top-0 left-0;
+    animation: walk 4s var(--bezier);
   }
 
   /* mobile */
@@ -31,29 +40,42 @@ const cssWidth = width;
       margin-top: 0;
       width: var(--width);
       height: var(--height);
+      opacity: 1;
     }
 
     35% {
       width: 0;
-      height: 0;
+      opacity: 1;
+    }
+    100% {
+      /* opacity: 0; */
     }
   }
 
   /* desktop */
   @media (min-width: 768px) {
+    .cover {
+      @apply absolute bg-black top-0 left-0;
+      animation: walk var(--second) var(--bezier);
+    }
     @keyframes walk {
       0% {
         transform: translateX(0%);
         margin-top: 0;
         width: 100%;
         height: 100%;
+        opacity: 1;
       }
 
+      85% {
+        opacity: 1;
+      }
       100% {
         /* margin-top ends at fromTop prop value */
         /* transform: translateX ends at fromTop prop value */
         width: 100%;
         height: 100%;
+        opacity: 0;
       }
     }
   }
