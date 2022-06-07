@@ -30,7 +30,7 @@ const { height, width, bezier, second, classes, fromLeft, fromTop, delay } =
 
   .cover {
     @apply absolute bg-black top-0 left-0;
-    animation: walk var(--second) var(--bezier);
+    animation: walk 4s var(--bezier);
   }
 
   /* mobile */
@@ -43,19 +43,21 @@ const { height, width, bezier, second, classes, fromLeft, fromTop, delay } =
       opacity: 1;
     }
 
-    30% {
-      width: var(--width);
-      height: var(--height);
-    }
     35% {
       width: 0;
-      height: 0;
-      opacity: 0;
+      opacity: 1;
+    }
+    100% {
+      /* opacity: 0; */
     }
   }
 
   /* desktop */
   @media (min-width: 768px) {
+    .cover {
+      @apply absolute bg-black top-0 left-0;
+      animation: walk var(--second) var(--bezier);
+    }
     @keyframes walk {
       0% {
         transform: translateX(0%);
