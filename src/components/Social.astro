@@ -6,12 +6,12 @@ import Animator from "./Animator.astro";
 <Animator
   height={"75px"}
   width={"100vw"}
-  bezier={"ease-in"}
-  second={"1.2"}
+  bezier={"ease-out"}
+  second={"2.2s"}
   fromLeft={"100vw"}
-  delay={"0s"}
+  component={"social"}
 >
-  <div class="social">
+  <div class="social animate-fade">
     <div class="flex">
       <a href="/"> <span class="home text-three">Home</span></a><a href="/blog"
         ><span class="blog text-one animate-pulse">Blog</span></a
