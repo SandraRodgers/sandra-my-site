@@ -3,23 +3,23 @@ const { wildFront } = Astro.props;
 const info = wildFront[0];
 ---
 
-<ul class="card-1">
-  <h3>
+<ul class="wild-section">
+  <h2>
     Recent Writings In the Wild <span class="text-one text-lg"
       >(External Links)</span
     >
-  </h3>
+  </h2>
   <li>
     <a href={info[0].link}>
       <span class="text-three mr-4">{info[0].date.slice(0, 10)}</span><span
-        class="font-ptmono text-white hover:text-two">{info[0].title}</span
+        class="font-ptmono text-white hover:text-four">{info[0].title}</span
       ><span class="ml-2 text-one">{`${info[0].source}`}</span></a
     >
   </li>
   <li>
     <a href={info[1].link}>
       <span class="text-three mr-4">{info[1].date.slice(0, 10)}</span><span
-        class="font-ptmono text-white hover:text-two">{info[1].title}</span
+        class="font-ptmono text-white hover:text-four">{info[1].title}</span
       >
       <span class="ml-2 text-one">{`${info[1].source}`}</span></a
     >
@@ -27,12 +27,15 @@ const info = wildFront[0];
 </ul>
 
 <style>
-  .card-1 {
-    @apply border-2 border-white rounded-sm;
-    @apply p-8;
+  h2 {
+    @apply text-2xl sm:text-4xl !important;
+  }
+  .wild-section {
+    @apply pb-8;
+    @apply border-b-2 border-white;
   }
   li {
-    @apply my-4;
+    @apply my-8 px-8;
     @apply text-base;
   }
 

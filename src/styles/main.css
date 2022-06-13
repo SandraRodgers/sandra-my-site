@@ -48,6 +48,10 @@ h1 {
   @apply text-4xl md:text-5xl lg:text-5xl xl:text-6xl !important;
 }
 
+h2 {
+  @apply font-ptsans;
+}
+
 h3 {
   @apply font-ptsans font-black;
 }
