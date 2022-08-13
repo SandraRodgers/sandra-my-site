@@ -21,7 +21,7 @@ main > div {
 }
 
 p {
-  @apply text-lg sm:text-xl;
+  @apply text-xl sm:text-2xl;
   @apply text-four;
   @apply font-ptsans;
   @apply py-4;
