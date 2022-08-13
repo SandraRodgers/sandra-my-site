@@ -10,7 +10,7 @@ module.exports = {
       white: "#FFF",
       gray: "#D9D9D9",
       one: "#EFB198",
-      two: "#F5E090",
+      two: "#fedc5a",
       three: "#9DFFC1",
       four: "#a3b5e3",
     },

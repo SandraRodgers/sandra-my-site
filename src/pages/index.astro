@@ -8,30 +8,30 @@ const description = "Personal website of Sandra Rodgers";
 ---
 
 <Layout {title} {description}>
-  <div class="home">
-    <Animator
-      height={"100%"}
-      width={"100%"}
-      bezier={"ease-out"}
-      second={"1s"}
-      fromLeft={"675px"}
-    >
-      <h1 class="mb-4 text-5xl lg:text-6xl;">Hi, I'm Sandra</h1>
+  <div class="home -mt-40">
+    <Animator>
+      <img class="h-20 sm:h-28 relative top-16 -left-8 lg:-left-24" src="sparkles.webp" />
+      <div class="flex justify-end">
+        <img class="h-20 sm:h-28 relative top-10 right-0 lg:-right-10" src="hearts.gif" />
+      </div>
+      <h1 class="title mb-4">Sandra Rodgers</h1>
     </Animator>
-    <p>
-      I’m a <u>developer experience engineer</u>. I make the experience of using
-      technology more pleasant and seamless, focusing on the things that matter
-      to software engineers and web developers: tools, documentation, UI,
-      processes, and education.
-    </p><p>
-      With a background in teaching and front-end engineering, I also have a
-      love for design, UX, and design systems.
-    </p>
-    <p>
-      I'm currently building the developers platform at <a
+
+    <p class="detail" style="padding:4px 0;">
+      Developer experience engineer currently at <a
         href="https://deepgram.com/"
         target="_blank">Deepgram</a
-      > and writing content about web development.
+      >.
+    </p>
+    <p class="detail" style="padding:4px 0;">
+      Instructor for <a
+        class="text-three hover:bg-three hover:text-black"
+        href="vuemaster.com"
+        target="_blank">Vue Mastery</a
+      >
+    </p>
+    <p class="greeting" class="text-white font-semibold tracking-wide">
+      Happy to make your acquaintance. <span class="text-3xl">😊</span>
     </p>
     <div class="flex flex-wrap md:justify-end md:mr-40 py-4">
       <LinkButton
@@ -69,5 +69,35 @@ const description = "Personal website of Sandra Rodgers";
     @apply px-10 sm:px-16 lg:px-44;
     @apply py-28 sm:py-32 lg:py-40;
     @apply w-full;
+  }
+
+  u {
+    padding-bottom: 7px;
+    text-decoration: none;
+    border-bottom: 3px solid;
+    @apply border-three;
+  }
+
+  @media (min-width: 768px) {
+    .title {
+      font-size: 8em !important;
+    }
+
+    .detail {
+      font-size: 1.85em !important;
+    }
+
+    .greeting {
+      font-size:1.5em !important;
+    }
+  }
+
+  .detail {
+    font-size: 1.2em;
+  }
+
+  .greeting {
+    font-size:1.2em;
+    @apply text-white;
   }
 </style>
