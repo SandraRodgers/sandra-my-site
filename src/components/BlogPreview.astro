@@ -20,17 +20,19 @@ const { post, slug } = Astro.props;
   .post {
     @apply pb-8 pt-4;
     @apply mb-8;
-    @apply rounded-sm border-2 border-black hover:border-2 hover:border-one;
+    /* @apply rounded-sm border-2 b; */
   }
 
   .date {
     @apply text-three;
     @apply font-ptmono;
+    @apply text-xl md:text-2xl;
   }
 
   .description {
-    @apply text-four;
+    @apply text-four hover:text-one;
     @apply font-ptmono;
     @apply pt-4;
+    @apply text-xl md:text-2xl;
   }
 </style>
