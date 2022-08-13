@@ -7,13 +7,17 @@ const description = "Personal Website of Sandra Rodgers";
 
 <Layout {title} {description}>
   <div>
+    <img class="h-20 relative -right-56 sm:-right-80" src="sparkles.webp" />
     <h1>Teaching</h1>
     <p>
-      I’m currently working with <a
-        href="https://www.vuemastery.com/"
+      I’m currently creating learning content for <a
+        class="vue-mastery"
+        href="https://vuemastery.com"
         target="_blank">Vue Mastery</a
-      > on a course about a Vue.js topic of great interest to me. Check back soon
-      for updates!
+      >
+      about Vue's new offical state managment library, <a
+        href="https://pinia.vuejs.org/">Pinia</a
+      >! Check out my most recent course.
     </p>
   </div></Layout
 >
@@ -29,9 +33,7 @@ const description = "Personal Website of Sandra Rodgers";
     @apply text-4xl md:text-5xl lg:text-5xl xl:text-6xl !important;
   }
 
-  a {
-    @apply font-ptmono;
-    @apply underline underline-offset-2 decoration-one text-one;
-    @apply hover:bg-one hover:text-black;
+  .vue-mastery {
+    @apply text-three hover:bg-three hover:text-black;
   }
 </style>
