@@ -5,9 +5,9 @@ const { post, slug } = Astro.props;
 <ul class="post">
   <div class="px-8">
     <a href={`blog/${slug}`}>
-      <h3 class="title">{post.frontmatter.title}</h3>
       <div class="date">{post.frontmatter.date.slice(0, 10)}</div>
-      <div class="description">{post.frontmatter.description}</div>
+      <h3 class="title">{post.frontmatter.title}</h3>
+      <span class="description">{post.frontmatter.description}</span>
     </a>
   </div>
 </ul>
