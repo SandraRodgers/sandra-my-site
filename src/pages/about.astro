@@ -7,53 +7,34 @@ const description = "About Sandra Rodgers";
 
 <Layout {title} {description}>
   <div class="container">
+    <div class="flex justify-end">
+      <img
+        class="h-20 relative -top-4 right-0 lg:-left-0 xl:-left-40"
+        src="sparkles.webp"
+      />
+    </div>
     <h1>About Me...</h1>
-    <div class="about">
+
+    <div class="about mt-0  xl:-mt-28">
       <div class="img-container">
         <img src="/sandra_portrait.jpeg" />
       </div>
       <div class="text-container">
         <p>
-          After a ten year career as a high school and middle school teacher, I
-          pivoted to an entirely new career as a front-end developer. My
-          launchpad was a three month immersive web development bootcamp, where
-          I learned fundamentals of creating full-stack web applications. I've
-          always had an interest in art and design in addition to my love for
-          teaching, so I knew early on that front-end development would be the
-          direction I would take as an engineer.
-        </p><p>
-          I had the awesome opportunity to continue on at the bootcamp for
-          another cohort, but this time as a mentor, which gave me the chance to
-          teach lessons and work one-on-one with students learning to code. The
-          mentor position and my background in teaching made me hope that
-          eventually I would gain enough experience as an engineer to one day
-          create educational content for others learning about web development.
-          But that would have to come later. At the end of that three month
-          cohort, I applied for developer jobs and started my new life as a web
-          developer.
+          I am a career-changer into the world of web development after spending
+          over ten years as a high school (and sometimes middle school) teacher.
+          After working as a front-end developer for several years, I found a
+          way to combine my teaching background with my developer skills. At
+          work, I help to build and maintain Deepgram's developer education
+          websites, in addition to the other front-end development I do there. I
+          also write education content related to web development and I am an
+          instructor for Vue Mastery.
         </p>
-        <p>
-          In August 2019, I started my first developer job at a financial-tech
-          company, where I worked for two years on the UXDev team as a front-end
-          engineer. We were focused on building a UI component library and
-          learning about the process of creating and implementing a design
-          system from the ground up. The team I worked with was made up of
-          incredibly intelligent, supportive,talented front-end developers and I
-          took advantage of the opportunity to learn as much as possible from
-          them. This gave me a great start with a solid foundation in front-end
-          development.
-        </p>
-        <p>
-          It isn't surprising that I found my way to developer experience, a
-          role that combines engineering, UX, and education. Now I work as a
-          developer experience engineer at Deepgram, striving to make the
-          experience of using Deepgram's speech-to-text API an enjoyable and
-          seamless one. I helped build our education platform at <a
-            href="https://developers.deepgram.com/"
-            target="_blank">developers.deepgram.com</a
-          >, and I write educational content to support users of Deepgram's
-          automatic speech recognition technology.
-        </p>
+        <p class="mb-6 ">I'm also a chihuhahua momma! Here are my babies:</p>
+        <div class="flex flex-col sm:flex-row items-center justify-end">
+          <img class="px-2 hover:skew-y-6" src="PB.png" />
+          <img class="px-2 hover:skew-y-6" src="Shala.png" />
+        </div>
       </div>
     </div>
   </div>
@@ -74,9 +55,10 @@ const description = "About Sandra Rodgers";
       @apply w-full;
 
       img {
-        @apply w-6/12 md:w-4/12 xl:w-3/12;
-        @apply py-8;
-        @apply rounded-sm;
+        @apply w-8/12 md:w-4/12 xl:w-3/12;
+        /* @apply py-8; */
+        @apply rounded;
+        clip-path: inset(5% 20% 15% 10%);
       }
     }
   }
