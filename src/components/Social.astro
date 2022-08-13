@@ -7,6 +7,7 @@ import Animator from "./Animator.astro";
   height={"75px"}
   width={"100vw"}
   bezier={"ease-out"}
+  second={"2s"}
   fromLeft={"100vw"}
 >
   <div class="social">
@@ -22,7 +23,8 @@ import Animator from "./Animator.astro";
           rel="noreferrer"
           target="_blank"
         >
-          <Icon class="h-5" name="simple-icons:github" /></a
+          <Icon class="h-6 block sm:hidden" name="simple-icons:github" />
+          <Icon class="h-8 hidden sm:block" name="simple-icons:github" /></a
         >
       </li>
       <li>
@@ -31,7 +33,8 @@ import Animator from "./Animator.astro";
           rel="noreferrer"
           target="_blank"
         >
-          <Icon class="h-5" name="simple-icons:codepen" /></a
+          <Icon class="h-6 block sm:hidden" name="simple-icons:codepen" />
+          <Icon class="h-8 hidden sm:block" name="simple-icons:codepen" /></a
         >
       </li>
       <li>
@@ -40,7 +43,8 @@ import Animator from "./Animator.astro";
           rel="noreferrer"
           target="_blank"
         >
-          <Icon class="h-5" name="simple-icons:linkedin" /></a
+          <Icon class="h-6 block sm:hidden" name="simple-icons:linkedin" />
+          <Icon class="h-8 hidden sm:block" name="simple-icons:linkedin" /></a
         >
       </li>
       <li>
@@ -48,8 +52,8 @@ import Animator from "./Animator.astro";
           href="https://twitter.com/sandra_rodgers_"
           rel="noreferrer"
           target="_blank"
-        >
-          <Icon class="h-5" name="simple-icons:twitter" /></a
+          ><Icon class="h-6 block sm:hidden" name="simple-icons:twitter" />
+          <Icon class="h-8 hidden sm:block" name="simple-icons:twitter" /></a
         >
       </li>
     </ul>

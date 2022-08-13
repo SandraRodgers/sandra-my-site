@@ -6,7 +6,8 @@ const { text, style, href } = Astro.props;
 
 <style>
   a {
-    @apply px-4 py-2;
+    @apply px-4 py-2 md:py-4;
+    @apply text-base md:text-2xl;
     @apply font-ptmono;
     @apply hover:bg-black hover:text-white hover:border-white;
   }

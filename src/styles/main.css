@@ -23,7 +23,7 @@ main > div {
 p {
   @apply text-lg sm:text-xl;
   @apply text-four;
-  @apply font-ptmono;
+  @apply font-ptsans;
   @apply py-4;
 }
 
@@ -46,6 +46,7 @@ h1 {
   @apply font-ptsans;
   @apply mt-4 md:mt-8 xl:mt-0;
   @apply text-4xl md:text-5xl lg:text-5xl xl:text-6xl !important;
+  @apply leading-tight;
 }
 
 h2 {

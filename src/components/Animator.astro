@@ -8,7 +8,7 @@ const { height, width, bezier, second, classes, fromLeft, fromTop, delay } =
     <slot />
     <span
       class={`cover ${classes}`}
-      style={` margin-top:${fromTop}; transform:translateX(${fromLeft});`}
+      style={`animation: walk ${second} ${bezier}; margin-top:${fromTop}; transform:translateX(${fromLeft});`}
     ></span>
   </div>
 </div>
@@ -56,7 +56,7 @@ const { height, width, bezier, second, classes, fromLeft, fromTop, delay } =
   @media (min-width: 768px) {
     .cover {
       @apply absolute bg-black top-0 left-0;
-      animation: walk var(--second) var(--bezier);
+      /* animation: walk var(--second) var(--bezier); */
     }
     @keyframes walk {
       0% {
