@@ -31,44 +31,50 @@ const pageDescription = "Personal blog of Sandra Rodgers";
 ---
 
 <Layout {pageTitle} {pageDescription}>
-  <div class="post">
-    <h1>{post.frontmatter.title}</h1>
-    <img class="cover" src={post.frontmatter.cover} alt={post.frontmatter.alt}
-    />
-    <article class="prose sm:prose-sm md:prose">
+  <div class="blog container">
+    <div class="text-container">
+      <h1>{post.frontmatter.title}</h1>
+      <p class="date">{post.frontmatter.date.slice(0, 10)}</p>
+      <img class="cover" src={post.frontmatter.cover} alt={post.frontmatter.alt}
+      />
+
       <post.Content></post.Content>
-    </article>
+    </div>
   </div>
 </Layout>
 
-<style>
-  .post {
-    @apply h-full;
-    @apply px-10 sm:px-16 lg:px-24 xl:px-44;
+<style scoped>
+  .container {
+    @apply px-10 sm:px-16 lg:px-44;
+    @apply mr-0 2xl:mr-20;
     @apply py-28 sm:py-32 lg:py-40;
   }
 
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-5xl xl:text-6xl !important;
-    @apply mb-10 !important;
+  .about {
+    @apply flex flex-col  items-center;
+    @apply w-full;
+
+    .img-container {
+      @apply flex justify-center  xl:justify-center;
+      @apply w-full;
+
+      img {
+        @apply w-6/12 md:w-4/12 xl:w-3/12;
+        @apply rounded;
+        clip-path: inset(5% 20% 15% 10%);
+      }
+    }
   }
 
-  .cover {
-    @apply mb-10 !important;
-    @apply rounded-sm;
-    @apply w-full md:w-5/6 lg:w-3/6;
-    @apply hidden sm:flex;
+  .text-container {
+    @apply pl-0 sm:pl-8;
+    h1 {
+      @apply text-5xl lg:text-6xl !important;
+      @apply my-4 md:mt-8 xl:mt-0;
+    }
   }
 
-  li {
-    @apply text-one;
-  }
-
-  article {
-    @apply max-w-full;
-    @apply md:max-w-4xl;
-    @apply lg:max-w-5xl;
-    @apply xl:max-w-6xl;
-    @apply 2xl:max-w-7xl;
+  .date {
+    @apply text-three;
   }
 </style>

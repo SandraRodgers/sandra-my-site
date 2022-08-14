@@ -14,13 +14,13 @@ import Animator from "./Animator.astro";
       <a href="/"><li>Home</li></a>
       <a href="/about"><li>About</li></a>
       <a href="/teaching"><li>Teaching</li></a>
-      <a class="blog" href="/blog"><li>Blog</li></a>
+      <a class="blog-sidebar" href="/blog"><li>Blog</li></a>
       <a href="/interests"><li>Interests</li></a>
     </ul>
   </Animator>
 </nav>
 
-<style>
+<style scoped>
   nav {
     @apply hidden md:flex flex-col;
     @apply md:h-screen md:w-3/12 lg:w-2/12;
@@ -46,7 +46,7 @@ import Animator from "./Animator.astro";
     @apply hover:bg-black hover:text-one !important;
   }
 
-  .blog {
+  .blog-sidebar {
     @apply border-4 border-three !important;
     @apply animate-pulse;
     li {

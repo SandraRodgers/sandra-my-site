@@ -10,23 +10,23 @@ const info = wildFront[0];
     >
   </h2>
   <li>
-    <a href={info[0].link}>
+    <a href={info[0].link} target="_blank">
       <span class="text-three mr-4">{info[0].date.slice(0, 10)}</span><span
-        class="font-ptmono text-white hover:text-four">{info[0].title}</span
+        class="font-ptmono text-white ">{info[0].title}</span
       ><span class="ml-2 text-one">{`${info[0].source}`}</span></a
     >
   </li>
   <li>
-    <a href={info[1].link}>
+    <a href={info[1].link} target="_blank">
       <span class="text-three mr-4">{info[1].date.slice(0, 10)}</span><span
-        class="font-ptmono text-white hover:text-four">{info[1].title}</span
+        class="font-ptmono text-white ">{info[1].title}</span
       >
       <span class="ml-2 text-one">{`${info[1].source}`}</span></a
     >
   </li>
 </ul>
 
-<style>
+<style scoped>
   h2 {
     @apply text-2xl sm:text-4xl !important;
   }
@@ -36,11 +36,15 @@ const info = wildFront[0];
   }
   li {
     @apply my-8 px-0 sm:px-8;
+    @apply py-4;
     @apply text-base;
+    @apply list-none !important;
+    @apply hover:bg-[#282c33];
+    @apply cursor-pointer;
   }
 
   a {
-    @apply hover:bg-black;
+    @apply hover:bg-[#282c33];
   }
 
   span {

@@ -2,8 +2,6 @@
 date: 2022-06-03
 title: Welcome to the Blog
 description: This is the very first post for the launch of my new personal website.
-cover: https://source.unsplash.com/3SIXZisims4
-alt: A neon sign in cursive saying hello
 ---
 
 Hi, I'm Sandra and this is the very first post of my blog on my personal website. I also blog for [Deepgram](https://developers.deepgram.com/blog/authors/sandrarodgers/) and other sites out there on the web.

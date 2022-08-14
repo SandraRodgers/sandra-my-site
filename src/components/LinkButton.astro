@@ -1,10 +1,10 @@
 ---
-const { text, style, href } = Astro.props;
+const { text, style, href, target } = Astro.props;
 ---
 
-<a {href} class={style}>{text}</a>
+<a {href} class={style} {target}>{text}</a>
 
-<style>
+<style scoped>
   a {
     @apply px-4 py-2 md:py-4;
     @apply text-base lg:text-2xl;
