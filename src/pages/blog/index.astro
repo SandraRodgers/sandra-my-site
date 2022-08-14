@@ -35,7 +35,7 @@ const wildFront = wildPosts.map((p) => {
 
 <Layout {pageTitle} {pageDescription}>
   <div class="blog">
-    <h1>Blog</h1>
+    <div class="blog-title flex items-center"><h1>Blog</h1><p class="text-lg md:text-xl lg:text-2xl animate-pulse ml-10 text-three">(Under construction. Please watch your step!)</p></div>
     <BlogInTheWild {wildFront} />
     <div class="blog-preview-section">
       <h2>
@@ -49,8 +49,8 @@ const wildFront = wildPosts.map((p) => {
 </Layout>
 
 <style>
-  h1 {
-    @apply mb-16 !important;
+  .blog-title {
+    @apply mb-16;
   }
    h2 {
     @apply text-2xl sm:text-4xl !important;
