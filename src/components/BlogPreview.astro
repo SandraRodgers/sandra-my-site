@@ -3,7 +3,7 @@ const { post, slug } = Astro.props;
 ---
 
 <ul class="post">
-  <div class="px-8">
+  <div class="px-0 sm:px-8">
     <a href={`blog/${slug}`}>
       <div class="date">{post.frontmatter.date.slice(0, 10)}</div>
       <h3 class="title">{post.frontmatter.title}</h3>
