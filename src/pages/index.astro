@@ -8,11 +8,10 @@ const description = "Personal website of Sandra Rodgers";
 ---
 
 <Layout {title} {description}>
-  <div class="home -mt-20 sm:-mt-40">
+  <div class="home">
     <Animator>
-      <img class="h-10 sm:h-20 relative top-6 sm:top-16 left-0 lg:-left-24" src="sparkles.webp" />
       <div class="flex justify-end">
-        <img class="h-10 sm:h-16 relative top-4 lg:top-10 right-6 lg:right-20" src="hearts.gif" />
+        <img class="h-10 lg:h-16" src="sparkles.webp" />
       </div>
       <h1 class="title mb-4">Sandra Rodgers</h1>
     </Animator>
@@ -25,7 +24,7 @@ const description = "Personal website of Sandra Rodgers";
     </p>
     <p class="detail" style="padding:4px 0;">
       Instructor for <a
-        class="text-three hover:bg-three hover:text-black"
+        class="vue"
         href="https://vuemastery.com"
         target="_blank">Vue Mastery</a
       >
@@ -66,7 +65,7 @@ const description = "Personal website of Sandra Rodgers";
 
 <style>
   .home {
-    @apply px-10 sm:px-16 lg:px-32;
+    @apply px-10 sm:px-16 lg:px-28;
     @apply py-28 sm:py-32 lg:py-40;
     @apply w-full;
   }
@@ -78,26 +77,4 @@ const description = "Personal website of Sandra Rodgers";
     @apply border-three;
   }
 
-  @media (min-width: 768px) {
-    .title {
-      font-size: 8em !important;
-    }
-
-    .detail {
-      font-size: 1.85em !important;
-    }
-
-    .greeting {
-      font-size:1.5em !important;
-    }
-  }
-
-  .detail {
-    font-size: 1.2em;
-  }
-
-  .greeting {
-    font-size:1.2em;
-    @apply text-white;
-  }
 </style>

@@ -1,4 +1,5 @@
 ---
+import LinkButton from "../components/LinkButton.astro";
 import Layout from "../layouts/Default.astro";
 import "../styles/main.css";
 const title = "Sandra Rodgers";
@@ -6,20 +7,58 @@ const description = "Personal Website of Sandra Rodgers";
 ---
 
 <Layout {title} {description}>
-  <div>
+  <div class="interests">
+    <img
+      class="h-10 lg:h-16 relative -right-56 sm:-right-80"
+      src="sparkles.webp"
+    />
     <h1>Interests</h1>
-    <p>I’m still working on this page...</p>
+    <p class="detail">
+      I'm interested in all things front-end development, but my favorite
+      go-to's are these:
+    </p>
+    <div class="flex flex-wrap w-5/6 sm:w-full">
+      <LinkButton
+        href="https://vuejs.org/"
+        text="Vue.js"
+        style="tertiary h-fit ml-2 mt-2"
+      />
+      <LinkButton
+        href="https://nuxtjs.org/"
+        text="Nuxt.js"
+        style="tertiary ml-2 mt-2 block"
+      />
+      <LinkButton
+        href="https://astro.build/"
+        text="Astro"
+        style="primary ml-2 mt-2 block"
+      />
+      <LinkButton
+        href="https://tailwindcss.com/"
+        text="Tailwind.css"
+        style="primary ml-2 mt-2 block"
+      />
+      <LinkButton
+        href="https://jamstack.org/"
+        text="Jamstack"
+        style="primary ml-2 mt-2 block"
+      />
+    </div>
   </div></Layout
 >
 
 <style>
-  div {
+  div.interests {
     @apply h-full;
-    @apply px-10 sm:px-16 lg:pr-96;
+    @apply px-10 sm:px-16 lg:px-44;
     @apply py-28 sm:py-32 lg:py-40;
   }
 
   h1 {
     @apply text-4xl md:text-5xl lg:text-5xl xl:text-6xl !important;
+  }
+
+  .vue-mastery {
+    @apply text-three hover:bg-three hover:text-black;
   }
 </style>

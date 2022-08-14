@@ -9,14 +9,14 @@ const description = "About Sandra Rodgers";
   <div class="container">
     <div class="flex justify-end">
       <img
-        class="h-10 sm:h-20 relative -top-4 right-0 lg:-left-0 xl:-left-40"
+        class="h-10 lg:h-16 relative -top-4 right-0 lg:-left-0 xl:-left-40"
         src="sparkles.webp"
       />
     </div>
     <h1>About Me...</h1>
 
-    <div class="about mt-0  xl:-mt-28">
-      <div class="img-container">
+    <div class="about mt-0 xl:-mt-28">
+      <div class="img-container ml-0 sm:ml-16">
         <img src="/sandra_portrait.jpeg" />
       </div>
       <div class="text-container">
@@ -30,10 +30,18 @@ const description = "About Sandra Rodgers";
           my developer skills. In my current role as a Developer Experience
           Engineer, I help to build and maintain Deepgram's developer education
           websites. I also write education content related to web development
-          and I am an instructor for Vue Mastery.
+          and I am an instructor for <a
+            class="vue"
+            href="https://vuemastery.com">Vue Mastery</a
+          >.
         </p>
         <p class="mb-6 ">I'm also a chihuhahua momma! Here are my babies:</p>
-        <div class="flex flex-col sm:flex-row items-center justify-end">
+        <div class="flex justify-end mr-20 sm:mr-0">
+          <img class="h-10 lg:h-16" src="hearts.gif" />
+        </div>
+        <div
+          class="flex flex-col sm:flex-row items-center justify-end pr-0 sm:pr-20"
+        >
           <img class="px-2 hover:skew-y-6" src="PB.png" />
           <img class="px-2 hover:skew-y-6" src="Shala.png" />
         </div>
@@ -57,8 +65,7 @@ const description = "About Sandra Rodgers";
       @apply w-full;
 
       img {
-        @apply w-8/12 md:w-4/12 xl:w-3/12;
-        /* @apply py-8; */
+        @apply w-6/12 md:w-4/12 xl:w-3/12;
         @apply rounded;
         clip-path: inset(5% 20% 15% 10%);
       }
@@ -70,11 +77,6 @@ const description = "About Sandra Rodgers";
     h1 {
       @apply text-5xl lg:text-6xl !important;
       @apply mt-4 md:mt-8 xl:mt-0;
-    }
-    a {
-      @apply font-ptmono;
-      @apply underline underline-offset-2 decoration-one text-one;
-      @apply hover:bg-one hover:text-black;
     }
   }
 </style>
