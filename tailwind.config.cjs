@@ -12,7 +12,7 @@ module.exports = {
       one: "#EFB198",
       two: "#fedc5a",
       three: "#9DFFC1",
-      four: "#a3b5e3",
+      four: "#bfcbf4",
     },
     fontSize: {
       xs: ".75rem",

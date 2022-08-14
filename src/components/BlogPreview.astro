@@ -3,16 +3,25 @@ const { post, slug } = Astro.props;
 ---
 
 <ul class="post">
-  <div class="px-0 sm:px-8">
-    <a href={`blog/${slug}`}>
-      <div class="date">{post.frontmatter.date.slice(0, 10)}</div>
-      <h3 class="title">{post.frontmatter.title}</h3>
-      <span class="description">{post.frontmatter.description}</span>
+  <div class="">
+    <a class="" href={`blog/${slug}`}>
+      <li>
+        <div class="date">{post.frontmatter.date.slice(0, 10)}</div>
+        <h3 class="title">{post.frontmatter.title}</h3>
+        <span class="description">{post.frontmatter.description}</span>
+      </li>
     </a>
   </div>
 </ul>
 
-<style>
+<style scoped>
+  li {
+    @apply list-none !important;
+    @apply ml-20 !important;
+    @apply hover:bg-[#282c33];
+    @apply py-4;
+  }
+
   h3 {
     @apply text-2xl sm:text-3xl !important;
     @apply text-white;
@@ -30,7 +39,7 @@ const { post, slug } = Astro.props;
   }
 
   .description {
-    @apply text-four hover:text-one;
+    @apply text-four;
     @apply font-ptmono;
     @apply pt-4;
     @apply text-xl md:text-2xl;
