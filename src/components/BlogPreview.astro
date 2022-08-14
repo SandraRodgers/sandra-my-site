@@ -17,7 +17,7 @@ const { post, slug } = Astro.props;
 <style scoped>
   li {
     @apply list-none !important;
-    @apply ml-20 !important;
+    @apply ml-0 md:ml-10 lg:ml-20 !important;
     @apply hover:bg-[#282c33];
     @apply py-4;
   }
@@ -29,7 +29,6 @@ const { post, slug } = Astro.props;
   .post {
     @apply pb-8 pt-4;
     @apply mb-8;
-    /* @apply rounded-sm border-2 b; */
   }
 
   .date {
