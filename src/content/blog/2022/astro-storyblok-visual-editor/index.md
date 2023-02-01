@@ -4,7 +4,7 @@ title: Getting the Visual Editor to work for Storyblok + Astro
 description: As I was getting my Astro-Storyblok project set up, I ran into a few bumps in the road with storyblok's visual editor.
 ---
 
-There’s a relatively new integration between Astro and Storyblok. It’s an SDK that helps developers build a site in Astro and use Storyblok as the CMS. Check out the Github readme for astro-storyblok to get started.
+There’s a relatively new integration between Astro and Storyblok. It’s an SDK that helps developers build a site in Astro and use Storyblok as the CMS. Check out the [Github readme](https://github.com/storyblok/storyblok-astro) for astro-storyblok to get started.
 
 As I was getting my own Astro-Storyblok project set up, I ran into a few bumps in the road. Those bumps had to do with getting storyblok's visual editor working.
 
@@ -74,7 +74,7 @@ The [@astrojs/netlify](https://github.com/withastro/astro/tree/main/packages/int
 
 To set up SSR in my Astro project, I needed to add the line `output: "server"` to the `defineConfig` function in the `astro.config.mjs` file. This tells Astro to use server-side rendering.
 
-```
+```js
 import { defineConfig } from "astro/config";
 import storyblok from "@storyblok/astro";
 
@@ -85,7 +85,7 @@ export default defineConfig({
 
 Also, since I'm using the Netlify adapter, I need to import the adapter package and add a line to the `astro.config.mjs` file:
 
-```
+```js
 import { defineConfig } from "astro/config";
 import netlify from "@astrojs/netlify/functions";
 
@@ -101,7 +101,7 @@ Integrating with storyblok requires a few steps. I already installed `@storyblok
 
 I needed to add the `storyblok()`function inside the `intregrations`property of the config object. That `storyblok()` function takes an object with several options:
 
-```
+```js
 storyblok({
 	accessToken: "<YOURACCESSTOKEN>",
 	bridge: true,
@@ -114,7 +114,7 @@ For the `accessToken` above, be sure to use the **preview token** if you want to
 
 Then I'll add the components that are needed to connect to the storyblok bloks in the storyblok space (Astro knows to look for these components in the `src` folder).
 
-```
+```js
 components: {
 	page: "storyblok/Page",
 	feature: "storyblok/Feature",
@@ -125,7 +125,7 @@ components: {
 
 Here's the entire config as looks now in the project:
 
-```
+```js
 import { defineConfig } from "astro/config";
 import storyblok from "@storyblok/astro";
 import tailwind from "@astrojs/tailwind";
