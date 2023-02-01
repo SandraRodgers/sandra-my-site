@@ -8,8 +8,6 @@ Hi, I'm Sandra and this is the very first post of my blog on my personal website
 
 This blog will mostly contain writings related to my professional interests, namely front-end development, design, and developer experience (DX). I plan to write a bit about my favorite tools, frameworks, and technologies.
 
-There might also be a personal post from time to time. Why not? It's my blog and I can do what I want with it. But my intended audience is other web developers or professionals working in tech.
-
 Stay tuned for upcoming posts on my most current interests, such as:
 
 - Jamstack and static site-building with frameworks like [Astro](https://astro.build/) and [Nuxt.js](https://nuxtjs.org/)
