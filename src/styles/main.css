@@ -87,6 +87,7 @@ h2 {
 
 h3 {
   @apply font-ptsans font-black;
+  @apply text-lg md:text-xl lg:text-2xl xl:text-3xl !important;
 }
 
 .post {

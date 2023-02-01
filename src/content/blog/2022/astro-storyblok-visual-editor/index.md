@@ -70,6 +70,10 @@ npm install @storyblok/astro
 
 The [@astrojs/netlify](https://github.com/withastro/astro/tree/main/packages/integrations/netlify/) dependency. This is the Netlify adapter that I must use with Astro to make my Astro project build in Netlify in SSR mode.
 
+```
+npm install @astrojs/netlify
+```
+
 ### Set up SSR
 
 To set up SSR in my Astro project, I needed to add the line `output: "server"` to the `defineConfig` function in the `astro.config.mjs` file. This tells Astro to use server-side rendering.

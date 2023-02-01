@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Default.astro";
+import "../styles/main.css";
+const title = "Sandra Rodgers";
+const description = "Personal Website of Sandra Rodgers";
+---
+
+<Layout {title} {description}>
+  <div class="projects">
+    <img
+      class="h-10 lg:h-16 relative -right-56 sm:-right-80"
+      src="sparkles.webp"
+    />
+    <h1>Projects</h1>
+    <h2 class="mt-20">Professional Projects</h2>
+    <p>
+      At <a href="deepgram.com">Deepgram</a>, I build and maintain the
+      developers' website and the Deepgram blog with the DX team. I'm also
+      currently building the new marketing site.
+    </p>
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-10 sm:gap-4 mt-10">
+      <a href="https://developers.deepgram.com/" class="hover:bg-black">
+        <img class="rounded-sm h-54 sm:h-80" src="deepgram_devs.png" />
+      </a>
+      <a href="https://blog.deepgram.com/" class="hover:bg-black">
+        <img class="rounded-sm h-54 sm:h-80" src="deepgram_blog.png" />
+      </a>
+    </div>
+    <p class="mt-10">
+      At <a href="alkami.com">Alkami</a>, I worked with the UXdev team to build
+      and maintain the company's UI component library, IrisVue.
+    </p>
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-10 sm:gap-4 mt-10">
+      <a href="https://iris-vue.alkami.design/" class="hover:bg-black">
+        <img class="rounded-sm h-54 sm:h-80" src="iris_vue.png" />
+      </a>
+    </div>
+    <h2 class="mt-20">Vue Mastery</h2>
+    <p>
+      I’m currently creating learning content for <a
+        class="vue-mastery"
+        href="https://vuemastery.com"
+        target="_blank">Vue Mastery</a
+      >
+      about Vue's new official state managment library, <a
+        href="https://pinia.vuejs.org/">Pinia</a
+      >! My new Pinia Patterns course is coming out in March 2023!
+    </p>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 sm:gap-4 mt-10"
+    >
+      <a href="https://www.vuemastery.com/courses" class="hover:bg-black">
+        <img class="rounded-sm h-54 sm:h-80" src="pinia_patterns.png" />
+      </a>
+      <a
+        href="https://www.vuemastery.com/courses/pinia-fundamentals/fundamentals-what-is-pinia/"
+        class="hover:bg-black"
+      >
+        <img class="rounded-sm h-54 sm:h-80" src="pinia_fundamentals.png" />
+      </a>
+    </div>
+  </div></Layout
+>
+
+<style scoped>
+  .projects {
+    @apply h-full;
+    @apply px-10 sm:px-16 lg:px-44;
+    @apply py-28 sm:py-32 lg:py-10;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-5xl xl:text-6xl !important;
+  }
+
+  .vue-mastery {
+    @apply text-three hover:bg-three hover:text-black;
+  }
+</style>
