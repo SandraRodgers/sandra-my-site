@@ -82,6 +82,7 @@ h1.title {
 
 h2 {
   @apply font-ptsans;
+  @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl !important;
 }
 
 h3 {
@@ -94,4 +95,8 @@ h3 {
       @apply w-4/6 md:w-3/6;
     }
   }
+}
+
+pre {
+  @apply mb-10 !important;
 }
